@@ -9,8 +9,8 @@ export default function TodoContextProvider({
 }) {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodo = (content: string) => {
-    const newTodo = { content };
+  const addTodo = (title: string) => {
+    const newTodo = { title, content: "" };
     setTodos([...todos, newTodo]);
   };
 

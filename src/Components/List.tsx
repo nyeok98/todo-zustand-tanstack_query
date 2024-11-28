@@ -9,7 +9,7 @@ const List = () => {
       {todos?.map((todo, index) => (
         <>
           <li key={index} className={styles.list}>
-            <p className={styles.listBox}>{todo.content}</p>
+            <p className={styles.listBox}>{todo.title}</p>
             <button
               className={styles.listButton}
               onClick={() => deleteTodo(index)}

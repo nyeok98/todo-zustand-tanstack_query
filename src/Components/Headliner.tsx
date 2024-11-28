@@ -14,7 +14,7 @@ const Headliner = () => {
     <div className={styles.headliner}>
       <div className={styles.todos}>
         {todos.map((todo) => {
-          return <div className={styles.todo}>{todo.content}</div>;
+          return <div className={styles.todo}>{todo.title}</div>;
         })}
       </div>
     </div>

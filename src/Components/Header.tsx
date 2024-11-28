@@ -10,7 +10,7 @@ const Header = () => {
           margin: "3rem 0",
         }}
       >
-        Todo List
+        TODO LIST
       </h1>
     </header>
   );
