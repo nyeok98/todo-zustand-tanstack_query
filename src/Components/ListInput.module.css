@@ -3,11 +3,18 @@
     width: 100%;
     height: auto;
     text-align: left;
-    padding: 1rem;
     display: flex;
     justify-content: space-between;
+    padding-bottom: var(--section-margin);
+    margin-bottom: var(--section-margin);
+    border-bottom: var(--border);
 }
 
 .inputBox {
     width: 100%;
+    height: var(--gutter);
+    border-radius: var(--br-content);
+    margin-right: var(--gap);
+    border: var(--border);
+    padding: var(--gap);
 }

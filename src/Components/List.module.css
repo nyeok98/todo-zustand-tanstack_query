@@ -1,7 +1,19 @@
 .root {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.listBox {
+    border: var(--border);
+    border-radius: var(--br-content);
     width: 100%;
-    height: auto;
-    text-align: left;
-    padding: 1rem;
+    padding: var(--gap);
+    margin-right: var(--gap);
 }
