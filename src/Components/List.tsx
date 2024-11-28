@@ -1,25 +1,26 @@
-import { FC } from 'react'
-import styles from './List.module.css'
+import { useContext } from "react";
+import styles from "./List.module.css";
+import TodosContext from "../Context/TodosContext";
 
-interface ListProps {
-  todos: string[]
-  onDelete: (index: number) => void
-}
-
-const List: FC<ListProps> = ({ todos, onDelete }) => {
+const List = () => {
+  const { todos, deleteTodo } = useContext(TodosContext);
   return (
     <ul className={styles.root}>
-      {todos.map((todo, index) => (
+      {todos?.map((todo, index) => (
         <>
           <li key={index} className={styles.list}>
-            <p className={styles.listBox}>{todo}</p>
-            <button className={styles.listButton} onClick={() => onDelete(index)}>Delete</button>
+            <p className={styles.listBox}>{todo.content}</p>
+            <button
+              className={styles.listButton}
+              onClick={() => deleteTodo(index)}
+            >
+              Delete
+            </button>
           </li>
-          
         </>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default List
+export default List;
