@@ -13,8 +13,8 @@
 
 - [x] Boiler Plate 구축
 - [x] mock API 연동
-- [ ] 비즈니스 로직 분리
-- [ ] ContextAPI로 전역상태 구축
+- [x] 비즈니스 로직 분리
+- [x] ContextAPI로 전역상태 구축
 - [ ] Zustand로 전환
 - [ ] API패칭 Tanstack Query로 전환
 - [ ] Stackflow로 UI 전환
