@@ -8,23 +8,31 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 button {
-  width: auto;
-  border-radius: var(--br-button);
+  width: calc(var(--gutter) * 5);
   padding: var(--gap);
   font-size: var(--fs-sm);
   background-color: var(--gray);
   transition-duration: var(--td);
+  border-radius: var(--br-button);
   color: var(--white);
   cursor: pointer;
   opacity: 1;
   border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
   background-color: var(--dark-gray);
+}
+
+ul {
+  all: unset;
 }
 
 li {
@@ -74,6 +82,7 @@ body {
   --red: #ff3b3b;
   --unreleased-color: rgba(176, 40, 52);
   --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --border: 1px solid var(--black);
 
   /* Transition */
   --td: 300ms;
@@ -84,11 +93,7 @@ body {
   body {
     /* Layout */
     --container: 1000px;
-    --section-margin: 80px;
-    --outer-margin: 40px;
-    --inner-margin: 20px;
-    --common-padding: 80px;
-    --common-content-padding: 40px;
+    --section-margin: 60px;
     --gutter: 20px;
     --gap: 12px;
     --page-padding: 200px;
@@ -108,11 +113,7 @@ body {
   body {
     /* Layout */
     --container: 900px;
-    --section-margin: 60px;
-    --outer-margin: 30px;
-    --inner-margin: 15px;
-    --common-padding: 60px;
-    --common-content-padding: 30px;
+    --section-margin: 45px;
     --gutter: 15px;
     --gap: 9px;
     --page-padding: 150px;
