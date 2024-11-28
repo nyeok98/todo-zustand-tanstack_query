@@ -4,7 +4,7 @@ import Header from "./Components/Header";
 import ListInput from "./Components/ListInput";
 import List from "./Components/List";
 /* Styles */
-import styles from "./App.module.css";
+import styles from "./Todo.module.css";
 
 export const Todo = () => {
   return (

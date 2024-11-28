@@ -8,7 +8,7 @@ const EmptyHeadliner: FC = () => {
 
 const Headliner = () => {
   const { todos } = useContext(TodosContext);
-  if (!todos) return <EmptyHeadliner />;
+  if (!todos || todos.length === 0) return <EmptyHeadliner />;
 
   return (
     <div className={styles.headliner}>

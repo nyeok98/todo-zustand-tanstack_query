@@ -9,6 +9,7 @@ const ListInput = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     addTodo(inputValue);
+    setInputValue("");
   };
 
   const onChange = (value: string) => {
