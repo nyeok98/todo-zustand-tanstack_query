@@ -1,0 +1,40 @@
+.emptyHeadliner {
+  width: 100vw;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  background-color: #949494;
+}
+
+.headliner {
+  width: 100vw;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffeb3b;
+}
+
+.todos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scroll 10s linear infinite;
+}
+
+.todo {
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 24px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
