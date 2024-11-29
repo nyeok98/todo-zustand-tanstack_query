@@ -15,7 +15,7 @@
 - [x] mock API 연동
 - [x] 비즈니스 로직 분리
 - [x] ContextAPI로 전역상태 구축
-- [ ] [WIP] mock API, Firebase로 전환
+- [x] mock API, Firebase로 전환
 - [ ] Zustand로 전환
 - [ ] API패칭 Tanstack Query로 전환
 - [ ] Stackflow로 UI 전환
