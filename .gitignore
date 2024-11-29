@@ -53,3 +53,6 @@ package-lock.json
 
 # TypeScript build files (if applicable)
 *.tsbuildinfo
+
+# etc
+settings.json
