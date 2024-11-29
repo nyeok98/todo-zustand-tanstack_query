@@ -1,13 +1,12 @@
-import { FC, useContext } from "react";
+import useTodos from "../hooks/useTodo";
 import styles from "./Headliner.module.css";
-import TodosContext from "../context/TodosContext";
 
-const EmptyHeadliner: FC = () => {
+const EmptyHeadliner = () => {
   return <div className={styles.emptyHeadliner}></div>;
 };
 
 const Headliner = () => {
-  const { todos } = useContext(TodosContext);
+  const { todos } = useTodos();
   if (!todos || todos.length === 0) return <EmptyHeadliner />;
 
   return (

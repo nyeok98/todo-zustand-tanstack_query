@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import useTodos from "../hooks/useTodo";
 import styles from "./List.module.css";
-import TodosContext from "../context/TodosContext";
 
 const List = () => {
-  const { todos, deleteTodo } = useContext(TodosContext);
+  const { todos, deleteTodo } = useTodos();
   return (
     <ul className={styles.root}>
       {todos?.map((todo) => (
