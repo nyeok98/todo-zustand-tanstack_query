@@ -1,6 +1,6 @@
 # TODO (feat.Zustand + Tanstack Query)
 
-#### 상태관리에 대한 다양한 실험을 위해 만들어놓은 놀이터입니다.
+#### '결국 모든 것은 디펜던시다'라는 미명하에 상태관리에 대한 다양한 실험을 위해 만들어놓은 놀이터입니다.
 
 #### 해당 프로젝트는 다음과 같은 기술스택을 포함합니다.
 
@@ -23,10 +23,10 @@
 - [ ] API패칭 `Tanstack Query`로 전환
 - [ ] `Stackflow`로 UI 전환
 
-
 <br />
 
 ### Minor Task
+
 - [ ] todo.id를 uuid로 전환 (`Firebase`에서 object의 value로 쿼리가 불가능함, 전체 패치 후 찾아야됨)
   - 현재의 로직은 `Firebase`가 발행하는 `auto-genrated-id`에 의존하고 있어 결합도가 다소 높다고 판단됨
   - 추후 DB를 바꾸더라도 `todoService` 레이어가 DB 스키마에 영향받지 않도록 해야함
