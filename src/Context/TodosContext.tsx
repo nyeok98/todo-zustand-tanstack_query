@@ -3,14 +3,14 @@ import { Todo } from "../types/todo";
 
 type TodoContextType = {
   todos: Todo[] | null;
-  addTodo: (content: string) => void;
-  deleteTodo: (index: number) => void;
+  addTodo: (title: string) => Promise<void>;
+  deleteTodo: (id: string) => Promise<void>;
 };
 
 const TodosContext = createContext<TodoContextType>({
   todos: null,
-  addTodo: () => {},
-  deleteTodo: () => {},
+  addTodo: async () => {},
+  deleteTodo: async () => {},
 });
 
 export default TodosContext;

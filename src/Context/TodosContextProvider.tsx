@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodosContext from "./TodosContext";
 import { Todo } from "../types/todo";
+
+import {
+  addTodo as fbAddTodo,
+  deleteTodo as fbDeleteTodo,
+  fetchTodos as fbFetchTodos,
+} from "../services/todoServices";
 
 export default function TodoContextProvider({
   children,
@@ -9,15 +15,34 @@ export default function TodoContextProvider({
 }) {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodo = (title: string) => {
-    const newTodo = { title, content: "" };
-    setTodos([...todos, newTodo]);
+  const addTodo = async (title: string) => {
+    try {
+      const id = "";
+      const newTodo = await fbAddTodo({ id, title, content: "" });
+      if (newTodo) setTodos([...todos, newTodo]);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
-  const deleteTodo = (index: number) => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
+  const deleteTodo = async (id: string) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    try {
+      await fbDeleteTodo(id);
+      setTodos(newTodos);
+    } catch (e) {
+      console.log(e);
+    }
   };
+
+  const fetchTodos = async () => {
+    const todos = await fbFetchTodos();
+    if (todos) setTodos(todos);
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <TodosContext.Provider value={{ todos, addTodo, deleteTodo }}>
