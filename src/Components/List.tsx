@@ -1,18 +1,18 @@
 import { useContext } from "react";
 import styles from "./List.module.css";
-import TodosContext from "../Context/TodosContext";
+import TodosContext from "../context/TodosContext";
 
 const List = () => {
   const { todos, deleteTodo } = useContext(TodosContext);
   return (
     <ul className={styles.root}>
-      {todos?.map((todo, index) => (
+      {todos?.map((todo) => (
         <>
-          <li key={index} className={styles.list}>
+          <li key={todo.id} className={styles.list}>
             <p className={styles.listBox}>{todo.title}</p>
             <button
               className={styles.listButton}
-              onClick={() => deleteTodo(index)}
+              onClick={() => deleteTodo(todo.id)}
             >
               Delete
             </button>

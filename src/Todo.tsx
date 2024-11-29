@@ -1,8 +1,8 @@
 /* Components */
-import Headliner from "./Components/Headliner";
-import Header from "./Components/Header";
-import ListInput from "./Components/ListInput";
-import List from "./Components/List";
+import Headliner from "./components/Headliner";
+import Header from "./components/Header";
+import ListInput from "./components/ListInput";
+import List from "./components/List";
 /* Styles */
 import styles from "./Todo.module.css";
 

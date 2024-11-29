@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import styles from "./Headliner.module.css";
-import TodosContext from "../Context/TodosContext";
+import TodosContext from "../context/TodosContext";
 
 const EmptyHeadliner: FC = () => {
   return <div className={styles.emptyHeadliner}></div>;

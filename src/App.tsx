@@ -1,4 +1,4 @@
-import TodoContextProvider from "./Context/TodosContextProvider";
+import TodoContextProvider from "./context/TodosContextProvider";
 import { Todo } from "./Todo";
 
 function App() {

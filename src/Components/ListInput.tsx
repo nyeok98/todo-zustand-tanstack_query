@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
-import TodosContext from "../Context/TodosContext";
+import TodosContext from "../context/TodosContext";
 import styles from "./ListInput.module.css";
 
 const ListInput = () => {
   const { addTodo } = useContext(TodosContext);
   const [inputValue, setInputValue] = useState("");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    addTodo(inputValue);
+    await addTodo(inputValue);
     setInputValue("");
   };
 
