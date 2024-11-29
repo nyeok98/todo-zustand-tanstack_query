@@ -1,17 +1,21 @@
 .emptyHeadliner {
   width: 100vw;
   height: 60px;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   background-color: #949494;
+  top: 0;
+  left: 0;
 }
 
 .headliner {
   width: 100vw;
   height: 60px;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   background-color: #ffeb3b;
+  top: 0;
+  left: 0;
 }
 
 .todos {
