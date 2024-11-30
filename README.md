@@ -1,4 +1,4 @@
-# TODO (feat.Zustand + Tanstack Query)
+# [WIP] TODO (feat.Zustand + Tanstack Query)
 
 #### '결국 모든 것은 디펜던시다'라는 미명하에 상태관리에 대한 다양한 실험을 위해 만들어놓은 놀이터입니다.
 
