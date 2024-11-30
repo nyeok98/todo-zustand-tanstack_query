@@ -18,7 +18,7 @@
 - [x] 비즈니스 로직 분리
 - [x] `Context API`로 전역상태 구축
 - [x] mock API, `Firebase`로 전환
-- [ ] [WIP] Fallback 구현
+- [ ] [WIP] Fallback 구현 (feat.`Suspense`)
 - [ ] `Zustand`로 전환
 - [ ] API패칭 `Tanstack Query`로 전환
 - [ ] `Stackflow`로 UI 전환
