@@ -2,9 +2,12 @@
 import Headliner from "./components/Headliner";
 import Header from "./components/Header";
 import ListInput from "./components/ListInput";
-import List from "./components/List";
+import { Suspense, lazy } from "react";
+import Spinner from "./components/Spinner";
 
-export const Todo = () => {
+const List = lazy(() => import("./components/List"));
+
+const Todo = () => {
   return (
     <>
       <Headliner />
@@ -16,8 +19,14 @@ export const Todo = () => {
       >
         <Header />
         <ListInput />
-        <List />
+        <Suspense
+          fallback={<Spinner width="100%" height="50px" color="#a2a2a2" />}
+        >
+          <List />
+        </Suspense>
       </div>
     </>
   );
 };
+
+export default Todo;
