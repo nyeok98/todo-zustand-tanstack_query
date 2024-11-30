@@ -1,5 +1,5 @@
-import styles from "./ListInput.module.css";
 import useTodoInput from "../hooks/useTodoInput";
+import styles from "./ListInput.module.css";
 
 const ListInput = () => {
   const { inputValue, hasError, handleSubmit, handleChange } = useTodoInput();

@@ -8,6 +8,7 @@ const List = () => {
     try {
       await deleteTodo(id);
     } catch {
+      // UI 관련 코드
       setHasError(true);
       setTimeout(() => {
         setHasError(false);
