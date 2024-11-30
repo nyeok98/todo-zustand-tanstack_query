@@ -3,29 +3,42 @@ import styles from "./ListInput.module.css";
 import useTodo from "../hooks/useTodo";
 
 const ListInput = () => {
-  const { addTodo } = useTodo();
-  const [inputValue, setInputValue] = useState("");
+  const { addTodo, hasError, setHasError } = useTodo();
+  const [inputValue, setInputValue] = useState<string>("");
 
-  const onSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addTodo(inputValue);
-    setInputValue("");
+    const trimmedValue = inputValue.trim();
+    if (!trimmedValue) return;
+    try {
+      await addTodo(trimmedValue);
+      setInputValue("");
+    } catch {
+      setHasError(true);
+    }
   };
 
-  const onChange = (value: string) => {
-    setInputValue(value);
+  const handleChange = (inputValue: string) => {
+    if (hasError) setHasError(false);
+    setInputValue(inputValue);
   };
 
   return (
-    <form className={styles.root} onSubmit={onSubmit}>
+    <form className={styles.root} onSubmit={handleSubmit}>
       <input
         type="text"
         value={inputValue}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         placeholder="Add a new todo..."
         className={styles.inputBox}
       />
-      <button type="submit">Add</button>
+      <button
+        type="submit"
+        className={styles.addButton}
+        disabled={!inputValue.trim() || hasError}
+      >
+        {!hasError ? "Add" : "Error"}
+      </button>
     </form>
   );
 };

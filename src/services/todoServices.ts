@@ -22,7 +22,7 @@ export const fetchTodos = async () => {
         } as Todo)
     );
   } catch (e) {
-    console.log(e);
+    throw Error("Todo list를 불러오지 못했습니다.");
   }
 };
 
@@ -31,7 +31,7 @@ export const addTodo = async (todo: Todo) => {
     const docRef = await addDoc(todosCollection, todo);
     return { id: docRef.id, title: todo.title, content: todo.content } as Todo;
   } catch (e) {
-    console.log(e);
+    throw Error("Todo를 추가하지 못했습니다.");
   }
 };
 
@@ -40,6 +40,6 @@ export const deleteTodo = async (id: string) => {
     const docRef = doc(db, "todos", id);
     await deleteDoc(docRef);
   } catch (e) {
-    console.log(e);
+    throw Error("Todo를 삭제하지 못했습니다.");
   }
 };
