@@ -14,6 +14,7 @@ export default function TodoContextProvider({
   children: React.ReactNode;
 }) {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const addTodo = async (title: string) => {
     try {
@@ -21,7 +22,7 @@ export default function TodoContextProvider({
       const newTodo = await fbAddTodo({ id, title, content: "" });
       if (newTodo) setTodos([...todos, newTodo]);
     } catch (e) {
-      console.log(e);
+      setHasError(true);
     }
   };
 
@@ -31,13 +32,17 @@ export default function TodoContextProvider({
       await fbDeleteTodo(id);
       setTodos(newTodos);
     } catch (e) {
-      console.log(e);
+      setHasError(true);
     }
   };
 
   const fetchTodos = async () => {
-    const todos = await fbFetchTodos();
-    if (todos) setTodos(todos);
+    try {
+      const todos = await fbFetchTodos();
+      if (todos) setTodos(todos);
+    } catch {
+      setHasError(true);
+    }
   };
 
   useEffect(() => {
@@ -45,7 +50,9 @@ export default function TodoContextProvider({
   }, []);
 
   return (
-    <TodosContext.Provider value={{ todos, addTodo, deleteTodo }}>
+    <TodosContext.Provider
+      value={{ todos, addTodo, deleteTodo, hasError, setHasError }}
+    >
       {children}
     </TodosContext.Provider>
   );
