@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { Todo } from "../types/todo";
 
-type TodoContextType = {
+type TodosContextType = {
   todos: Todo[] | null;
   addTodo: (title: string) => Promise<void>;
   deleteTodo: (id: string) => Promise<void>;
@@ -9,7 +9,7 @@ type TodoContextType = {
   setHasError: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const TodosContext = createContext<TodoContextType>({
+const TodosContext = createContext<TodosContextType>({
   todos: null,
   addTodo: async () => {},
   deleteTodo: async () => {},
