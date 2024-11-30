@@ -1,19 +1,27 @@
 .root {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
 }
 
 .list {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .listBox {
-    border: var(--border);
-    border-radius: var(--br-content);
-    width: 100%;
-    padding: var(--gap);
-    margin-right: var(--gap);
+  border: var(--border);
+  border-radius: var(--br-content);
+  width: 100%;
+  padding: var(--gap);
+  margin-right: var(--gap);
+}
+
+.listButton {
+  transition-duration: var(--td);
+}
+
+.listButton:hover {
+  background-color: var(--danger);
 }

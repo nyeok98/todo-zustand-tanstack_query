@@ -1,20 +1,30 @@
 .root {
-    display: block;
-    width: 100%;
-    height: auto;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: var(--section-margin);
-    margin-bottom: var(--section-margin);
-    border-bottom: var(--border);
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--section-margin);
+  margin-bottom: var(--section-margin);
+  border-bottom: var(--border);
 }
 
 .inputBox {
-    width: 100%;
-    height: var(--gutter);
-    border-radius: var(--br-content);
-    margin-right: var(--gap);
-    border: var(--border);
-    padding: var(--gap);
+  width: 100%;
+  height: var(--gutter);
+  border-radius: var(--br-content);
+  margin-right: var(--gap);
+  border: var(--border);
+  padding: var(--gap);
+}
+
+.addButton:hover {
+  background-color: var(--primary);
+}
+
+.addButton:disabled {
+  background-color: var(--gray);
+  opacity: 0.5;
+  cursor: default;
 }

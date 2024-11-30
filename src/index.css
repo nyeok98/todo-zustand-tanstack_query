@@ -81,8 +81,8 @@ body {
   --black: #131313;
   --gray: #d8d8d8;
   --dark-gray: #a2a2a2;
-  --red: #ff3b3b;
-  --unreleased-color: rgba(176, 40, 52);
+  --primary: #045e08;
+  --danger: #ff3b3b;
   --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --border: 1px solid var(--black);
 
