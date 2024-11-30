@@ -1,27 +1,8 @@
-import { useState } from "react";
 import styles from "./ListInput.module.css";
-import useTodo from "../hooks/useTodo";
+import useTodoInput from "../hooks/useTodoInput";
 
 const ListInput = () => {
-  const { addTodo, hasError, setHasError } = useTodo();
-  const [inputValue, setInputValue] = useState<string>("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmedValue = inputValue.trim();
-    if (!trimmedValue) return;
-    try {
-      await addTodo(trimmedValue);
-      setInputValue("");
-    } catch {
-      setHasError(true);
-    }
-  };
-
-  const handleChange = (inputValue: string) => {
-    if (hasError) setHasError(false);
-    setInputValue(inputValue);
-  };
+  const { inputValue, hasError, handleSubmit, handleChange } = useTodoInput();
 
   return (
     <form className={styles.root} onSubmit={handleSubmit}>
