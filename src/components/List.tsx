@@ -1,8 +1,10 @@
-import useTodos from "../hooks/useTodo";
+import { useEffect } from "react";
+import { useTodoStore } from "../store/todo";
 import styles from "./List.module.css";
 
 const List = () => {
-  const { todos, deleteTodo, hasError, setHasError } = useTodos();
+  const { todos, fetchTodos, deleteTodo, hasError, setHasError } =
+    useTodoStore();
 
   const handleDelete = async (id: string) => {
     try {
@@ -15,6 +17,10 @@ const List = () => {
       }, 2000);
     }
   };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <ul className={styles.root}>

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import useTodo from "../hooks/useTodo";
+import { useTodoStore } from "../store/todo";
 
 const useTodoInput = () => {
-  const { addTodo, hasError, setHasError } = useTodo();
+  const { addTodo, hasError, setHasError } = useTodoStore();
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {

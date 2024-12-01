@@ -1,4 +1,4 @@
-import useTodos from "../hooks/useTodo";
+import { useTodoStore } from "../store/todo";
 import styles from "./Headliner.module.css";
 
 const EmptyHeadliner = () => {
@@ -6,7 +6,7 @@ const EmptyHeadliner = () => {
 };
 
 const Headliner = () => {
-  const { todos } = useTodos();
+  const { todos } = useTodoStore();
   if (!todos || todos.length === 0) return <EmptyHeadliner />;
 
   return (

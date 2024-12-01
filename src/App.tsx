@@ -1,12 +1,7 @@
 import Todo from "./Todo";
-import TodoContextProvider from "./context/TodosContextProvider";
 
 function App() {
-  return (
-    <TodoContextProvider>
-      <Todo />
-    </TodoContextProvider>
-  );
+  return <Todo />;
 }
 
 export default App;
