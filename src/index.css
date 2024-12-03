@@ -1,3 +1,27 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/roboto-v32-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/roboto-v32-latin-700.woff2") format("woff2");
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   margin-top: var(--section-margin);
@@ -10,7 +34,6 @@ body {
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 button {

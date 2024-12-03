@@ -43,6 +43,7 @@
 ## Notes
 
 - (24.12.03) `development` 환경에서는 번들링이나 컴프레션이 제대로 일어나지않고, 개발 환경 세팅을 위한 자잘한 리소스가 추가로 요청되어 최적화에 한계가 있음을 배웠다. 우선 이상태로 진행하고 추후 배포를 통해 더 개선을 해보는 것으로.
+- (23.12.03) LCP 개선을 위해 font를 local hosting으로 전환하고 `<head>`에서 preload진행
 - (23.12.03) `Eslint` 및 `Vite Config`를 통해 추가 compression 진행. (`Lighthouse` 75 -> 77)
 - (24.12.03) `<head>`에서 style import 다신 하지 말기 FCP에 악영향을 준다.(`Lighthouse` 73 -> 75)
 - (24.12.03) 이왕 옮기는 거 성능개선 지표라도 보자는 생각에 `Lighthouse`로 Core Web Vital을 측정했습니다. 이 작은 앱이 73점인 것에 충격받아 개선작업을 우선순위로 둡니다.
