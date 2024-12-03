@@ -13,6 +13,9 @@
 
 ## Tasks
 
+#### Upcoming Features
+- [ ] 습관 관리
+
 #### Major Task
 
 - [x] Boiler Plate 구축
@@ -23,9 +26,9 @@
 - [x] Fallback 구현 (feat.`Suspense`)
 - [x] `Context API` -> `Zustand`로 전환
 - [ ] [WIP] API패칭 `Tanstack Query`로 전환
+- [ ] [WIP] styles `Emotion`으로 전환
 - [ ] `Stackflow`로 UI 전환
 
-<br />
 
 #### Minor Task
 
@@ -39,5 +42,5 @@
 
 ## Notes
 
-![화면 기록 2024-11-30 14 33 36](https://github.com/user-attachments/assets/0522d4f1-f4d9-4623-a79d-b14192d7fdd1)
+![test](https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95)
 React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정 (w/ mid-tier mobile network throttling)
