@@ -1,4 +1,4 @@
-# [WIP] TODO (feat.Zustand + Tanstack Query) 
+# [WIP] TODO (feat.Zustand + Tanstack Query)
 
 #### '결국 모든 것은 디펜던시다'라는 미명하에 상태관리에 대한 다양한 실험을 위해 만들어놓은 놀이터입니다.
 
@@ -14,6 +14,7 @@
 ## Tasks
 
 #### Upcoming Features
+
 - [ ] 습관 관리 (like 깃헙잔디)
 
 #### Major Task
@@ -29,7 +30,6 @@
 - [ ] [WIP] styles `Emotion`으로 전환
 - [ ] `Stackflow`로 UI 전환
 
-
 #### Minor Task
 
 - [ ] todo.id를 uuid로 전환 (`Firebase`에서 object의 value로 쿼리가 불가능함, 전체 패치 후 찾아야됨)
@@ -42,6 +42,7 @@
 
 ## Notes
 
+- (24.12.03) `<head>`에서 style import 다신 하지 말기 FCP에 악영향을 준다.(`Lighthouse` 73 -> 76)
 - (24.12.03) 이왕 옮기는 거 성능개선 지표라도 보자는 생각에 `Lighthouse`로 Core Web Vital을 측정했습니다. 이 작은 앱이 73점인 것에 충격받아 개선작업을 우선순위로 둡니다.
 - (24.12.01) `Context API`로 관리하던 전역상태 관리를 `Zustand`로 옮겼지만, 서버상태를 굳이 `Zustand`로 관리하는 것이 이점이 없다는 판단에 `Tanstack Query`로 옮기고자 합니다.
 - (24.11.30) 오늘따라 내 코드가 이뻐보입니다. 당연합니다 피처가 간단하니까요. 하지만 곧 피처를 추가해나가면서 내 예쁜 코드의 진가가 나타날거라 믿어 의심치 않습니다.
@@ -51,7 +52,6 @@
 <img width="600" alt="상태관리 로직의 변천사" src="https://github.com/user-attachments/assets/009e6274-8b4e-4c39-96ef-d13b5d1c5623">
 
 상태관리 로직의 변천사 v.24.12.03
-
 
 <img width="600" alt="React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정" src="https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95">
 
