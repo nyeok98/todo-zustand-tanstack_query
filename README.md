@@ -1,4 +1,6 @@
-# [WIP] TODO (feat.Zustand + Tanstack Query)
+# [WIP] TODO (feat.Zustand + Tanstack Query) 
+#### 이 작은 앱이 Lighthouse 점수가 73점인 것에 충격받아 개선작업을 우선순위로 둡니다.(24.12.03)
+---
 
 #### '결국 모든 것은 디펜던시다'라는 미명하에 상태관리에 대한 다양한 실험을 위해 만들어놓은 놀이터입니다.
 
