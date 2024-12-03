@@ -42,6 +42,7 @@
 
 ## Notes
 <img width="600" alt="스크린샷 2024-12-03 14 09 31" src="https://github.com/user-attachments/assets/009e6274-8b4e-4c39-96ef-d13b5d1c5623">
+
 상태관리 로직의 변천사 v.24.12.03
 
 ![test](https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95)
