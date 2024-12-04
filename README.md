@@ -51,10 +51,10 @@
 
 <br/>
 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/c4b1ea4c-c857-49b1-ba96-fef9c8001b88">
+<img width="850" alt="image" src="https://github.com/user-attachments/assets/19e5494b-583c-4843-b499-dc31e72164b2">
 
 *상태관리 로직의 변천사 (v.24.12.04)*
 
-<img width="800" alt="React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정" src="https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95">
+<img width="850" alt="React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정" src="https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95">
 
 *React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정 (w/ mid-tier mobile network throttling)*
