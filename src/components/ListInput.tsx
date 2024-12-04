@@ -2,7 +2,7 @@ import useTodoInput from "../hooks/useTodoInput";
 import styles from "./ListInput.module.css";
 
 const ListInput = () => {
-  const { inputValue, handleSubmit, handleChange } = useTodoInput();
+  const { inputValue, isError, handleSubmit, handleChange } = useTodoInput();
 
   return (
     <form className={styles.root} onSubmit={handleSubmit}>
@@ -14,8 +14,7 @@ const ListInput = () => {
         className={styles.inputBox}
       />
       <button type="submit" className={styles.addButton}>
-        Add
-        {/* {!hasError ? "Add" : "Error"} */}
+        {!isError ? "Add" : "Error"}
       </button>
     </form>
   );

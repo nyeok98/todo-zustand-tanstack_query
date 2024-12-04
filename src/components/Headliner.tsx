@@ -6,8 +6,8 @@ const EmptyHeadliner = () => {
 };
 
 const Headliner = () => {
-  const { data: todos } = useTodos();
-  if (!todos || todos.length === 0) return <EmptyHeadliner />;
+  const { data: todos, isLoading } = useTodos();
+  if (isLoading || !todos || todos.length === 0) return <EmptyHeadliner />;
 
   return (
     <div className={styles.headliner}>

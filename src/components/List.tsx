@@ -1,9 +1,12 @@
 import styles from "./List.module.css";
 import { useTodos, useDeleteTodo } from "../hooks/useTodos";
+import Spinner from "./Spinner";
 
 const List = () => {
-  const { data: todos } = useTodos();
-  const { mutate: deleteTodo } = useDeleteTodo();
+  const { data: todos, isLoading } = useTodos();
+  const { mutate: deleteTodo, isError: isErrorDelete } = useDeleteTodo();
+
+  if (isLoading) return <Spinner width="100%" height="50px" color="#a2a2a2" />;
 
   const handleDelete = async (id: string) => {
     deleteTodo(id);
@@ -18,8 +21,7 @@ const List = () => {
             className={styles.listButton}
             onClick={() => handleDelete(todo.id)}
           >
-            Delete
-            {/* {!hasError ? "Delete" : "Error"} */}
+            {!isErrorDelete ? "Delete" : "Error"}
           </button>
         </li>
       ))}
