@@ -26,8 +26,7 @@
 - [x] mock API, `Firebase`로 전환
 - [x] Fallback 구현 (feat.`Suspense`)
 - [x] `Context API` -> `Zustand`로 전환
-- [ ] [WIP] API패칭 `Tanstack Query`로 전환
-- [ ] [WIP] styles `Emotion`으로 전환
+- [x] API패칭 `Tanstack Query`로 전환
 - [ ] `Stackflow`로 UI 전환
 
 #### Minor Task
