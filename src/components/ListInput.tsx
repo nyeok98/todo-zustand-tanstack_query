@@ -2,7 +2,7 @@ import useTodoInput from "../hooks/useTodoInput";
 import styles from "./ListInput.module.css";
 
 const ListInput = () => {
-  const { inputValue, hasError, handleSubmit, handleChange } = useTodoInput();
+  const { inputValue, handleSubmit, handleChange } = useTodoInput();
 
   return (
     <form className={styles.root} onSubmit={handleSubmit}>
@@ -13,12 +13,9 @@ const ListInput = () => {
         placeholder="Add a new todo..."
         className={styles.inputBox}
       />
-      <button
-        type="submit"
-        className={styles.addButton}
-        disabled={!inputValue.trim() || hasError}
-      >
-        {!hasError ? "Add" : "Error"}
+      <button type="submit" className={styles.addButton}>
+        Add
+        {/* {!hasError ? "Add" : "Error"} */}
       </button>
     </form>
   );
