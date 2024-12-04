@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useTodoStore } from "../store/todo";
+import { useAddTodo } from "./useTodos";
 
 const useTodoInput = () => {
-  const { addTodo, hasError, setHasError } = useTodoStore();
+  const { mutate: addTodo } = useAddTodo();
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -10,21 +10,21 @@ const useTodoInput = () => {
     const trimmedValue = inputValue.trim();
     if (!trimmedValue) return;
     try {
-      await addTodo(trimmedValue);
+      await addTodo({ id: "", title: trimmedValue, content: "" });
       setInputValue("");
     } catch {
-      setHasError(true);
+      // setHasError(true);
     }
   };
 
   const handleChange = (value: string) => {
-    if (hasError) setHasError(false);
+    // if (hasError) setHasError(false);
     setInputValue(value);
   };
 
   return {
     inputValue,
-    hasError,
+    // hasError,
     handleSubmit,
     handleChange,
   };
