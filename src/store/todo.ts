@@ -5,12 +5,12 @@ import {
   addTodo as fbAddTodo,
   deleteTodo as fbDeleteTodo,
   fetchTodos as fbFetchTodos,
-} from "../services/todoServices";
+} from "../api/todos/api";
 
 type TodoStore = {
   todos: Todo[];
   hasError: boolean;
-  addTodo: (title: string) => Promise<void>;
+  addTodo: (todo: Todo) => Promise<void>;
   deleteTodo: (id: string) => Promise<void>;
   fetchTodos: () => Promise<void>;
   setHasError: (flag: boolean) => void;
@@ -20,10 +20,9 @@ export const useTodoStore = create<TodoStore>((set) => ({
   todos: [],
   hasError: false,
 
-  addTodo: async (title: string) => {
+  addTodo: async (todo: Todo) => {
     try {
-      const id = "";
-      const newTodo = await fbAddTodo({ id, title, content: "" });
+      const newTodo = await fbAddTodo(todo);
       if (newTodo) {
         set((state) => ({ todos: [...state.todos, newTodo] }));
       }

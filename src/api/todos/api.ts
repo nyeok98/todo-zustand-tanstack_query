@@ -1,4 +1,4 @@
-import { db } from "../firebase/firebase";
+import { db } from "../../services/firebase";
 import {
   collection,
   addDoc,
@@ -6,7 +6,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import { Todo } from "../types/todo";
+import { Todo } from "../../types/todo";
 
 const todosCollection = collection(db, "todos");
 
@@ -19,7 +19,7 @@ export const fetchTodos = async () => {
           id: doc.ref.id,
           title: doc.data().title,
           content: doc.data().content,
-        } as Todo)
+        }) as Todo
     );
   } catch (e) {
     throw Error("Todo list를 불러오지 못했습니다.");
