@@ -35,6 +35,9 @@
   - 현재의 로직은 `Firebase`가 발행하는 `auto-genrated-id`에 의존하고 있어 결합도가 다소 높다고 판단됨
   - 추후 DB를 바꾸더라도 `todoService` 레이어가 DB 스키마에 영향받지 않도록 해야함
   - 일시적으로 `Firebase` 의 `auto-genrated-id` 이외에 데이터 객체 내부에 id를 중복저장하는 방향으로 구현
+- [ ] `Tanstack Query`로 옮기는 과정에서 부수적인 코드 clean up
+  - [x] `Suspense` 대체할 `loading`, `error` state 관리
+  - [ ] 비동기 함수 선언부 및 호출부 정리 
 - [ ] `createdAt`추가 및 정렬
 
 <br />
