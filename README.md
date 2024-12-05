@@ -7,7 +7,6 @@
 - React.js
 - Zustand
 - Tanstack Query (a.k.a. React Query)
-- Stackflow (feat.Daangn)
 
 <br/>
 
@@ -27,7 +26,8 @@
 - [x] Fallback 구현 (feat.`Suspense`)
 - [x] `Context API` -> `Zustand`로 전환
 - [x] API패칭 `Tanstack Query`로 전환
-- [ ] `Stackflow`로 UI 전환
+- [ ] App swtiching 라이브러리 만들기
+- [ ] Todo에 필터 만들기
 
 #### Minor Task
 
@@ -38,7 +38,7 @@
 - [ ] `Tanstack Query`로 옮기는 과정에서 부수적인 코드 clean up
   - [x] `Suspense` 대체할 `loading`, `error` state 관리
   - [ ] 비동기 함수 선언부 및 호출부 정리 
-- [ ] `createdAt`추가 및 정렬
+- [ ] `completed`, `createdAt`, `priority` 추가 및 정렬
 
 <br />
 
