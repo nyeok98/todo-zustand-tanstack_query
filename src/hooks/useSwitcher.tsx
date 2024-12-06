@@ -14,9 +14,11 @@ type Props = {
   initialStep: string;
 };
 
+// 컴포넌트를 반환한다는 점에서 Hook이라기보단 컴포넌트를 만드는 라이브러리에 가깝다.
 export function useSwitcher({ steps, initialStep }: Props) {
   const [step, setStep] = useState<string>(initialStep);
 
+  // 토글 버튼을 만드는 컴포넌트
   const AppToggle = () => {
     return (
       <div
@@ -33,6 +35,12 @@ export function useSwitcher({ steps, initialStep }: Props) {
     );
   };
 
+  // 각 단계별로 주입되는 컴포넌트를 명시적으로 표현하기 위해 도입
+  const Step = ({ children }: StepProps) => {
+    return <>{children}</>;
+  };
+
+  // 전체 컴포넌트를 관리하는 컴포넌트
   const Switcher = ({ children }: SwitcherProps) => {
     const childrenArray = React.Children.toArray(children);
 
@@ -43,11 +51,6 @@ export function useSwitcher({ steps, initialStep }: Props) {
     if (!targetStep || !React.isValidElement(targetStep)) return null;
 
     return <>{targetStep}</>;
-  };
-
-  // Funnel과 별도로 Step을 반환
-  const Step = ({ children }: StepProps) => {
-    return <>{children}</>;
   };
 
   return { Switcher, AppToggle, Step, setStep };
