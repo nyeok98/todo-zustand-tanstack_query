@@ -57,3 +57,8 @@ package-lock.json
 # etc
 settings.json
 eslint.config.js
+
+# Test
+*.test.*
+setupTests.ts
+jest.config.js
