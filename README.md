@@ -22,7 +22,7 @@
 - [x] Fallback 구현 (feat.`Suspense`)
 - [x] `Context API` -> `Zustand`로 전환
 - [x] API패칭 `Tanstack Query`로 전환
-- [ ] `Switcher`(for app switching) 라이브러리 만들기
+- [x] `Switcher`(for app switching) 라이브러리 만들기
 - [ ] Todo에 필터 만들기
 
 #### Minor Task
