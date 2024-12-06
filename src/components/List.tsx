@@ -8,10 +8,6 @@ const List = () => {
 
   if (isLoading) return <Spinner width="100%" height="50px" color="#a2a2a2" />;
 
-  const handleDelete = async (id: string) => {
-    deleteTodo(id);
-  };
-
   return (
     <ul className={styles.root}>
       {todos?.map((todo) => (
@@ -19,7 +15,7 @@ const List = () => {
           <p className={styles.listBox}>{todo.title}</p>
           <button
             className={styles.listButton}
-            onClick={() => handleDelete(todo.id)}
+            onClick={() => deleteTodo(todo.id)}
           >
             {!isErrorDelete ? "Delete" : "Error"}
           </button>

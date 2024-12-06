@@ -31,9 +31,9 @@
   - 현재의 로직은 `Firebase`가 발행하는 `auto-genrated-id`에 의존하고 있어 결합도가 다소 높다고 판단됨
   - 추후 DB를 바꾸더라도 `todoService` 레이어가 DB 스키마에 영향받지 않도록 해야함
   - 일시적으로 `Firebase` 의 `auto-genrated-id` 이외에 데이터 객체 내부에 id를 중복저장하는 방향으로 구현
-- [ ] `Tanstack Query`로 옮기는 과정에서 부수적인 코드 clean up
+- [x] `Tanstack Query`로 옮기는 과정에서 부수적인 코드 clean up
   - [x] `Suspense` 대체할 `loading`, `error` state 관리
-  - [ ] 비동기 함수 선언부 및 호출부 정리
+  - [x] 비동기 함수 선언부 및 호출부 정리
 - [x] 렌더링 과정 테스트를 통한 라이브러리 간 비교 근거 확보(feat.vitest)
 - [ ] `completed`, `createdAt`, `priority` 추가 및 정렬
   - [ ] `completed`
@@ -59,16 +59,16 @@
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/5672f202-0a35-4778-85e9-40721abb8406">
 
-*Vitest를 통해 측정한 결과, 10번 모두 서버에서 패칭해오는 과정은 `React-Query`가, Delete 등 상태에 UI적 조작을 가하는 경우에는 `Zustand`가 성능 우위를 보임. Zustand의 실제 서버 상태 조작에 대한 성능과 별개로 UI단에서 낙관적 업데이트를 진행하기 때문* 
+_Vitest를 통해 측정한 결과, 10번 모두 서버에서 패칭해오는 과정은 `React-Query`가, Delete 등 상태에 UI적 조작을 가하는 경우에는 `Zustand`가 성능 우위를 보임. Zustand의 실제 서버 상태 조작에 대한 성능과 별개로 UI단에서 낙관적 업데이트를 진행하기 때문_
 
 <br/>
 
 <img width="850" alt="image" src="https://github.com/user-attachments/assets/19e5494b-583c-4843-b499-dc31e72164b2">
 
-*상태관리 로직의 변천사 (v.24.12.04)*
+_상태관리 로직의 변천사 (v.24.12.04)_
 
 <br/>
 
 <img width="850" alt="React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정" src="https://github.com/user-attachments/assets/e4390cd6-5ccf-40af-9da9-6bbf8e8c9f95">
 
-*React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정 (w/ mid-tier mobile network throttling)*
+_React.Suspense & Lazy로 비동기 콘텐츠를 호출하는 과정 (w/ mid-tier mobile network throttling)_
