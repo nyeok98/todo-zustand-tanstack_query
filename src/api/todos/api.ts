@@ -13,14 +13,17 @@ const todosCollection = collection(db, "todos");
 export const fetchTodos = async () => {
   try {
     const snapshot = await getDocs(todosCollection);
-    return snapshot.docs.map(
-      (doc) =>
-        ({
-          id: doc.ref.id,
-          title: doc.data().title,
-          content: doc.data().content,
-        }) as Todo
-    );
+    return snapshot.docs
+      .map(
+        (doc) =>
+          ({
+            id: doc.ref.id,
+            title: doc.data().title,
+            content: doc.data().content,
+            createdAt: doc.data().createdAt?.toDate() || new Date(),
+          }) as Todo
+      )
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   } catch (e) {
     throw Error("Todo list를 불러오지 못했습니다.");
   }
@@ -29,7 +32,7 @@ export const fetchTodos = async () => {
 export const addTodo = async (todo: Todo) => {
   try {
     const docRef = await addDoc(todosCollection, todo);
-    return { id: docRef.id, title: todo.title, content: todo.content } as Todo;
+    return { ...todo, id: docRef.id } as Todo;
   } catch (e) {
     throw Error("Todo를 추가하지 못했습니다.");
   }

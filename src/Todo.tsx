@@ -2,9 +2,9 @@
 import Headliner from "./components/Headliner";
 import Header from "./components/Header";
 import ListInput from "./components/ListInput";
-import { lazy, ReactNode } from "react";
+import { ReactNode } from "react";
+import List from "./components/List";
 
-const List = lazy(() => import("./components/List"));
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div

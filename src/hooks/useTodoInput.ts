@@ -9,7 +9,12 @@ const useTodoInput = () => {
     e.preventDefault();
     const trimmedValue = inputValue.trim();
     if (!trimmedValue) return;
-    addTodo({ id: "", title: trimmedValue, content: "" });
+    addTodo({
+      id: "",
+      title: trimmedValue,
+      content: "",
+      createdAt: new Date(),
+    });
     setInputValue("");
   };
 
