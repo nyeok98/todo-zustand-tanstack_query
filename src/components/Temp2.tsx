@@ -1,11 +1,11 @@
 import { AppLayout } from "./AppLayout";
 
-const App1 = () => {
+const Temp2 = () => {
   return (
     <AppLayout>
-      <h1 style={{ width: "100%" }}>App1</h1>
+      <h1 style={{ width: "100%" }}>Temp2</h1>
     </AppLayout>
   );
 };
 
-export default App1;
+export default Temp2;

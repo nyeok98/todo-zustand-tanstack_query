@@ -1,7 +1,7 @@
 export enum STEPS {
-  APP1 = "App1",
+  TEMP1 = "Temp1",
   TODO = "Todo",
-  APP2 = "App2",
+  TEMP2 = "Temp2",
 }
 
 export const INITIAL_STEP = "Todo";
