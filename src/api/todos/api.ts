@@ -19,7 +19,8 @@ export const fetchTodos = async () => {
           ({
             id: doc.ref.id,
             title: doc.data().title,
-            content: doc.data().content,
+            completed: doc.data().completed,
+            priority: doc.data().priority,
             createdAt: doc.data().createdAt?.toDate() || new Date(),
           }) as Todo
       )

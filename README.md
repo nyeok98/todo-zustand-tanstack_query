@@ -35,10 +35,10 @@
   - [x] `Suspense` 대체할 `loading`, `error` state 관리
   - [x] 비동기 함수 선언부 및 호출부 정리
 - [x] 렌더링 과정 테스트를 통한 라이브러리 간 비교 근거 확보(feat.`vitest`)
-- [ ] `completed`, `createdAt`, `priority` 추가 및 정렬
-  - [ ] `completed`
+- [x] `completed`, `createdAt`, `priority` 추가 및 정렬
+  - [x] `completed`
   - [x] `createdAt`
-  - [ ] `priority`
+  - [x] `priority`
 
 <br />
 
