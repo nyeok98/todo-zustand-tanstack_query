@@ -39,6 +39,7 @@
   - [x] `completed`
   - [x] `createdAt`
   - [x] `priority`
+- [ ] `List`와 `ListInput`의 엔티티가 늘 같으므로 컴포넌트 통합
 
 <br />
 
