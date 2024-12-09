@@ -69,21 +69,10 @@ body {
   /* Layout */
   --container: 1320px;
   --section-margin: 120px;
-  --outer-margin: 60px;
-  --inner-margin: 30px;
+  --input-box: 45px;
   --common-padding: 120px;
-  --common-content-padding: 60px;
   --gutter: 30px;
   --gap: 15px;
-  --page-padding: 300px;
-  --col-1: calc((var(--container) - (var(--gutter) * 11)) / 12);
-  --col-2: calc(var(--col-1) * 2 + var(--gutter));
-  --col-3: calc(var(--col-1) * 3 + var(--gutter) * 2);
-  --col-4: calc(var(--col-1) * 4 + var(--gutter) * 3);
-  --col-5: calc(var(--col-1) * 5 + var(--gutter) * 4);
-  --col-6: calc(var(--col-1) * 6 + var(--gutter) * 5);
-  --col-8: calc(var(--col-1) * 8 + var(--gutter) * 7);
-  --col-9: calc(var(--col-1) * 9 + var(--gutter) * 8);
 
   /* Font */
   --fs-xxl: 120px;
@@ -105,9 +94,13 @@ body {
   --gray: #d8d8d8;
   --dark-gray: #a2a2a2;
   --primary: #045e08;
-  --danger: #ff3b3b;
+  --danger: #fa4032;
+  --low-color: #fab12f;
+  --medium-color: #fa812f;
+  --high-color: #fa4032;
+
   --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --border: 1px solid var(--black);
+  --border: 1px solid rgba(119, 119, 119, 0.343);
 
   /* Transition */
   --td: 300ms;

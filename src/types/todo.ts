@@ -1,7 +1,7 @@
 export enum PRIORITY {
-  LOW = "Low",
-  MEDIUM = "Medium",
-  HIGH = "High",
+  LOW = "low",
+  MEDIUM = "medium",
+  HIGH = "high",
 }
 
 export type Todo = {
