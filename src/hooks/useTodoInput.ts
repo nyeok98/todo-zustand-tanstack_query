@@ -22,12 +22,25 @@ const useTodoInput = () => {
     setInputValue("");
   };
 
-  const handleChange = (value: string) => {
+  const handleInputChange = (value: string) => {
     setInputValue(value);
   };
 
-  const handlePriorityChange = (value: PRIORITY) => {
-    setPriority(value);
+  const handlePriorityChange = () => {
+    switch (priority) {
+      case PRIORITY.LOW:
+        setPriority(PRIORITY.MEDIUM);
+        break;
+      case PRIORITY.MEDIUM:
+        setPriority(PRIORITY.HIGH);
+        break;
+      case PRIORITY.HIGH:
+        setPriority(PRIORITY.LOW);
+        break;
+      default:
+        setPriority(PRIORITY.LOW);
+        break;
+    }
   };
 
   const handleCompletedChange = (value: boolean) => {
@@ -36,9 +49,11 @@ const useTodoInput = () => {
 
   return {
     inputValue,
+    completed,
+    priority,
     isError,
     handleSubmit,
-    handleChange,
+    handleInputChange,
     handlePriorityChange,
     handleCompletedChange,
   };
