@@ -60,7 +60,7 @@
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/5672f202-0a35-4778-85e9-40721abb8406">
 
-_`vitest`를 통해 측정한 결과, 10번 모두 서버에서 패칭해오는 과정은 `React-Query`가, Delete 등 상태에 UI 조작을 가하는 경우에는 `Zustand`가 성능 우위를 보임. Zustand의 실제 서버 상태 조작에 대한 성능과 별개로 UI단에서 낙관적 업데이트를 진행하기 때문_
+_`vitest`를 통해 측정한 결과, 10번 모두 서버에서 패칭해오는 과정은 `React-Query`가, Delete 등 상태에 UI 조작을 가하는 경우에는 `Zustand`가 성능 우위를 보임. Zustand의 실제 서버 상태 조작에 대한 성능과 별개로 UI단에서 낙관적 업데이트를 진행하기 때문 (onMutate로 `React-Query`도 낙관적 업데이트 상태)_
 
 <br/>
 
