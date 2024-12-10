@@ -5,14 +5,14 @@ import {
   UseMutationResult,
   useQueryClient,
 } from "@tanstack/react-query";
-import { TODOS_QUERY_KEYS } from "../api/todos/queries";
+import { QUERY_KEYS } from "../api/todos/queries";
 import { fetchTodos, addTodo, deleteTodo } from "../api/todos/api";
 import { Todo } from "../types/todo";
 
-const allTodosQueryKey = { queryKey: TODOS_QUERY_KEYS.all };
+const todoListQueryKey = { queryKey: QUERY_KEYS.TODO_LIST };
 
-export const useTodos = (): UseQueryResult<Todo[], Error> => {
-  return useQuery({ ...allTodosQueryKey, queryFn: fetchTodos });
+export const useFetchTodos = (): UseQueryResult<Todo[], Error> => {
+  return useQuery({ ...todoListQueryKey, queryFn: fetchTodos });
 };
 
 export const useAddTodo = (): UseMutationResult<Todo, Error, Todo> => {
@@ -20,12 +20,12 @@ export const useAddTodo = (): UseMutationResult<Todo, Error, Todo> => {
   return useMutation({
     mutationFn: addTodo,
     onMutate: async (newTodo) => {
-      await queryClient.cancelQueries(allTodosQueryKey);
+      await queryClient.cancelQueries(todoListQueryKey);
       const previousTodos = queryClient.getQueryData<Todo[]>(
-        TODOS_QUERY_KEYS.all
+        QUERY_KEYS.TODO_LIST
       );
       if (previousTodos) {
-        queryClient.setQueryData<Todo[]>(TODOS_QUERY_KEYS.all, [
+        queryClient.setQueryData<Todo[]>(QUERY_KEYS.TODO_LIST, [
           ...previousTodos,
           newTodo,
         ]);
@@ -36,11 +36,11 @@ export const useAddTodo = (): UseMutationResult<Todo, Error, Todo> => {
 
     onError: (_, __, context) => {
       if (context?.previousTodos) {
-        queryClient.setQueryData(TODOS_QUERY_KEYS.all, context.previousTodos);
+        queryClient.setQueryData(QUERY_KEYS.TODO_LIST, context.previousTodos);
       }
     },
     onSettled: () => {
-      queryClient.invalidateQueries(allTodosQueryKey);
+      queryClient.invalidateQueries(todoListQueryKey);
     },
   });
 };
@@ -50,13 +50,13 @@ export const useDeleteTodo = (): UseMutationResult<void, Error, string> => {
   return useMutation({
     mutationFn: deleteTodo,
     onMutate: async (id) => {
-      await queryClient.cancelQueries(allTodosQueryKey);
+      await queryClient.cancelQueries(todoListQueryKey);
       const previousTodos = queryClient.getQueryData<Todo[]>(
-        TODOS_QUERY_KEYS.all
+        QUERY_KEYS.TODO_LIST
       );
       if (previousTodos) {
         queryClient.setQueryData<Todo[]>(
-          TODOS_QUERY_KEYS.all,
+          QUERY_KEYS.TODO_LIST,
           previousTodos.filter((todo) => todo.id !== id)
         );
       }
@@ -64,10 +64,10 @@ export const useDeleteTodo = (): UseMutationResult<void, Error, string> => {
       return { previousTodos };
     },
     onError: () => {
-      queryClient.invalidateQueries(allTodosQueryKey);
+      queryClient.invalidateQueries(todoListQueryKey);
     },
     onSettled: () => {
-      queryClient.invalidateQueries(allTodosQueryKey);
+      queryClient.invalidateQueries(todoListQueryKey);
     },
   });
 };

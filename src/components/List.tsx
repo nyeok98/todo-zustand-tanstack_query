@@ -1,9 +1,9 @@
 import styles from "./List.module.css";
-import { useTodos, useDeleteTodo } from "../hooks/useTodos";
+import { useFetchTodos, useDeleteTodo } from "../hooks/useTodos";
 import Spinner from "./Spinner";
 
 const List = () => {
-  const { data: todos, isLoading } = useTodos();
+  const { data: todos, isLoading } = useFetchTodos();
   const { mutate: deleteTodo, isError: isErrorDelete } = useDeleteTodo();
 
   if (isLoading) return <Spinner width="100%" height="50px" color="#a2a2a2" />;
