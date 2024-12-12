@@ -1,4 +1,4 @@
-import { useTodos } from "../hooks/useTodos";
+import { useFetchTodos } from "../hooks/useTodos";
 import styles from "./Headliner.module.css";
 
 const EmptyHeadliner = () => {
@@ -6,20 +6,22 @@ const EmptyHeadliner = () => {
 };
 
 const Headliner = () => {
-  const { data: todos, isLoading } = useTodos();
+  const { data: todos, isLoading } = useFetchTodos();
   if (isLoading || !todos || todos.length === 0) return <EmptyHeadliner />;
 
   return (
     <div className={styles.headliner}>
-      <div className={styles.todos}>
+      <ul className={styles.todos}>
         {todos.map((todo, index) => {
           return (
-            <div key={`headliner-todo-${index}`} className={styles.todo}>
-              {todo.title}
+            <div>
+              <div key={`headliner-todo-${index}`} className={styles.todo}>
+                {todo.title}
+              </div>
             </div>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
