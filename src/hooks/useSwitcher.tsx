@@ -28,8 +28,15 @@ export function useSwitcher({ steps, initialStep }: Props) {
           justifyContent: "space-between",
         }}
       >
-        {steps.map((step) => {
-          return <button onClick={() => setStep(`${step}`)}>{step}</button>;
+        {steps.map((step, index) => {
+          return (
+            <button
+              key={`toggle-step-${index}`}
+              onClick={() => setStep(`${step}`)}
+            >
+              {step}
+            </button>
+          );
         })}
       </div>
     );

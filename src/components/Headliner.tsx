@@ -14,10 +14,8 @@ const Headliner = () => {
       <ul className={styles.todos}>
         {todos.map((todo, index) => {
           return (
-            <div>
-              <div key={`headliner-todo-${index}`} className={styles.todo}>
-                {todo.title}
-              </div>
+            <div key={`headliner-todo-${index}`} className={styles.todo}>
+              {todo.title}
             </div>
           );
         })}
