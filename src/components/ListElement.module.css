@@ -1,12 +1,30 @@
 .root {
-  display: block;
-  width: 100%;
-  height: var(--input-box);
-  text-align: left;
   display: flex;
-  padding-bottom: var(--section-margin);
-  margin-bottom: var(--section-margin);
-  border-bottom: var(--border);
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.listBox {
+  border: var(--border);
+  border-radius: var(--br-content);
+  width: 100%;
+  height: var(--gutter);
+  padding: var(--gap);
+  margin-right: var(--gap);
+}
+
+.listButton {
+  transition-duration: var(--td);
+}
+
+.listButton:hover {
+  background-color: var(--danger);
 }
 
 .checkBox {

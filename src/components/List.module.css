@@ -5,28 +5,6 @@
   padding: 0;
 }
 
-.list {
-  display: flex;
-  align-items: center;
-}
-
-.listBox {
-  border: var(--border);
-  border-radius: var(--br-content);
-  width: 100%;
-  height: var(--gutter);
-  padding: var(--gap);
-  margin-right: var(--gap);
-}
-
-.listButton {
-  transition-duration: var(--td);
-}
-
-.listButton:hover {
-  background-color: var(--danger);
-}
-
 .checkBox {
   width: var(--input-box);
   height: var(--input-box);
