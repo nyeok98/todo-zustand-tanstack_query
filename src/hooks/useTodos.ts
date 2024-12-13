@@ -6,7 +6,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../api/todos/queries";
-import { fetchTodos, addTodo, deleteTodo } from "../api/todos/api";
+import { fetchTodos, addTodo, updateTodo, deleteTodo } from "../api/todos/api";
 import { Todo } from "../types/todo";
 
 const todoListQueryKey = { queryKey: QUERY_KEYS.TODO_LIST };
@@ -34,6 +34,35 @@ export const useAddTodo = (): UseMutationResult<Todo, Error, Todo> => {
       return { previousTodos };
     },
 
+    onError: (_, __, context) => {
+      if (context?.previousTodos) {
+        queryClient.setQueryData(QUERY_KEYS.TODO_LIST, context.previousTodos);
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(todoListQueryKey);
+    },
+  });
+};
+
+export const useUpdateTodo = (): UseMutationResult<Todo, Error, Todo> => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: updateTodo,
+    onMutate: async (newTodo) => {
+      await queryClient.cancelQueries(todoListQueryKey);
+      const previousTodos = queryClient.getQueryData<Todo[]>(
+        QUERY_KEYS.TODO_LIST
+      );
+      if (previousTodos) {
+        queryClient.setQueryData<Todo[]>(
+          QUERY_KEYS.TODO_LIST,
+          previousTodos.map((todo) => (todo.id === newTodo.id ? newTodo : todo))
+        );
+      }
+
+      return { previousTodos };
+    },
     onError: (_, __, context) => {
       if (context?.previousTodos) {
         queryClient.setQueryData(QUERY_KEYS.TODO_LIST, context.previousTodos);

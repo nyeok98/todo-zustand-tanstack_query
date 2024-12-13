@@ -1,23 +1,37 @@
 import { useState } from "react";
-import { useAddTodo } from "./useTodos";
-import { PRIORITY } from "../types/todo";
+import { Todo, PRIORITY } from "../types/todo";
+import { useAddTodo, useDeleteTodo, useUpdateTodo } from "./useTodos";
 
-const useTodoInput = () => {
-  const { mutate: addTodo, isError } = useAddTodo();
+const useTodoInput = ({ todo }: { todo: Todo }) => {
+  const { mutate: addTodo } = useAddTodo();
+  const { mutate: updateTodo } = useUpdateTodo();
+  const { mutate: deleteTodo } = useDeleteTodo();
   const [inputValue, setInputValue] = useState<string>("");
-  const [priority, setPriority] = useState<PRIORITY>(PRIORITY.LOW);
-  const [completed, setCompleted] = useState<boolean>(false);
+  const [priority, setPriority] = useState<PRIORITY>(
+    todo.priority || PRIORITY.LOW
+  );
+  const [completed, setCompleted] = useState<boolean>(todo.completed || false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleUpdateTodo = () => {
+    if (todo.id === "") return;
+    updateTodo({
+      id: todo.id,
+      title: todo.title,
+      completed: completed,
+      priority: priority,
+      createdAt: todo.createdAt,
+    });
+  };
+
+  const handleSubmit = () => {
     const trimmedValue = inputValue.trim();
     if (!trimmedValue) return;
     addTodo({
       id: "",
-      title: trimmedValue,
+      title: inputValue,
       completed: completed,
       priority: priority,
-      createdAt: new Date(),
+      createdAt: todo.createdAt,
     });
     setInputValue("");
   };
@@ -30,32 +44,42 @@ const useTodoInput = () => {
     switch (priority) {
       case PRIORITY.LOW:
         setPriority(PRIORITY.MEDIUM);
+        handleUpdateTodo();
         break;
       case PRIORITY.MEDIUM:
         setPriority(PRIORITY.HIGH);
+        handleUpdateTodo();
         break;
       case PRIORITY.HIGH:
         setPriority(PRIORITY.LOW);
+        handleUpdateTodo();
         break;
       default:
         setPriority(PRIORITY.LOW);
+        handleUpdateTodo();
         break;
     }
+    handleUpdateTodo();
   };
 
   const handleCompletedChange = (value: boolean) => {
     setCompleted(value);
+    handleUpdateTodo();
+  };
+
+  const handleDelete = (id: string) => {
+    deleteTodo(id);
   };
 
   return {
     inputValue,
     completed,
     priority,
-    isError,
     handleSubmit,
     handleInputChange,
     handlePriorityChange,
     handleCompletedChange,
+    handleDelete,
   };
 };
 

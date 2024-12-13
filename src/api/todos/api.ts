@@ -4,6 +4,7 @@ import {
   addDoc,
   getDocs,
   deleteDoc,
+  updateDoc,
   doc,
 } from "firebase/firestore";
 import { Todo } from "../../types/todo";
@@ -31,11 +32,25 @@ export const fetchTodos = async () => {
 };
 
 export const addTodo = async (todo: Todo) => {
+  console.log("entered into Add");
   try {
     const docRef = await addDoc(todosCollection, todo);
     return { ...todo, id: docRef.id } as Todo;
   } catch (e) {
+    console.log(e);
     throw Error("Todo를 추가하지 못했습니다.");
+  }
+};
+
+export const updateTodo = async (todo: Todo) => {
+  console.log("entered");
+  try {
+    const docRef = doc(db, "todos", todo.id);
+    await updateDoc(docRef, todo);
+    return todo;
+  } catch (e) {
+    console.log(e);
+    throw Error("Todo를 업데이트하지 못했습니다.");
   }
 };
 
