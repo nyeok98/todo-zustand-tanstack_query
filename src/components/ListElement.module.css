@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--fs-xs);
+  font-size: var(--fs-xxs);
   font-weight: bold;
   color: var(--white);
 }

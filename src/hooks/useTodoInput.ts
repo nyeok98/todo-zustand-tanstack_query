@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Todo, PRIORITY } from "../types/todo";
 import { useAddTodo, useDeleteTodo, useUpdateTodo } from "./useTodos";
 
@@ -44,32 +44,30 @@ const useTodoInput = ({ todo }: { todo: Todo }) => {
     switch (priority) {
       case PRIORITY.LOW:
         setPriority(PRIORITY.MEDIUM);
-        handleUpdateTodo();
         break;
       case PRIORITY.MEDIUM:
         setPriority(PRIORITY.HIGH);
-        handleUpdateTodo();
         break;
       case PRIORITY.HIGH:
         setPriority(PRIORITY.LOW);
-        handleUpdateTodo();
         break;
       default:
         setPriority(PRIORITY.LOW);
-        handleUpdateTodo();
         break;
     }
-    handleUpdateTodo();
   };
 
   const handleCompletedChange = (value: boolean) => {
     setCompleted(value);
-    handleUpdateTodo();
   };
 
   const handleDelete = (id: string) => {
     deleteTodo(id);
   };
+
+  useEffect(() => {
+    handleUpdateTodo();
+  }, [priority, completed]);
 
   return {
     inputValue,
